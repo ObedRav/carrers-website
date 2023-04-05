@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/styles.css">
-    <title>Jovian Carrers</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Jovian Carrers{% endblock %}
+
+{% block content %}
     <div class="container">
-        <h1>Jovian Carrers</h1>
+        <h1 class="text-center mt-2 mb-4">Jovian Carrers</h1>
 
         <img src="../static/images/do-something-great.jpg" height="400px" id="banner">
 
-        <h2>About us</h2>
+        <h2 class="text-center mt-2 mb-4">About us</h2>
 
-        <p>
+        <p class="lead">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
             labore et dolore magna aliqua. Quis risus sed vulputate odio. Ac tortor dignissim convallis
             aenean et. Ultrices eros in cursus turpis massa tincidunt dui ut ornare. Tellus pellentesque
@@ -29,13 +24,22 @@
             consectetur purus ut faucibus pulvinar elementum integer.
         </p>
 
-        <h2>Open Positions</h2>
-        <p> TODO - Show the jobs here </p>
-        <div class="button">
-            <button>Contact us</button>
+        <h2 class=" text-center mt-2 mb-4 pb-2">Open Positions</h2>
+            {% for job in jobs %}
+            <div class="row border-bottom">
+                <div class="col-11 mb-2 mt-3">
+                    <h4 class="mb-1">{{ job.get('title') }}</h4>
+                    <div>Location: {{ job.get('location') }}</div>
+                    <div>Salary: {{ job.get('salary') or 'Contact us'}}</div>
+                </div>
+                <div class="col-1 mt-3">
+                    <button class="btn btn-outline-primary">Apply</button>
+                </div>
+            </div>
+            {% endfor %}
+        <div class="text-center mt-4">
+            <button class="btn btn-secondary btn-lg">Contact us</button>
+            <p class="copyright"> ©copyright 2022, Jovian</p>
         </div>
-
-        <p class="copyright"> ©copyright 2022, Jovian</p>
     </div>
-</body>
-</html>
+{% endblock %}
