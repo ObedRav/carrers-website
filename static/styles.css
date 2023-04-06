@@ -43,3 +43,8 @@ h4 {
     color: rgba(120, 120, 120);
 }
 
+#right-image {
+    height: 435px;
+    border-radius: 4px;
+}
+
