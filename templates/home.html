@@ -36,6 +36,7 @@
                     <h4 class="mb-1">{{ job.get('title') }}</h4>
                     <div>Location: {{ job.get('location') }}</div>
                     <div>Salary: {{ job.get('salary') or 'Contact us'}}</div>
+                    <div>Currency: {{ job.get('currency') or 'Contact us'}}</div>
                 </div>
                 <div class="col-1 mt-3">
                     <button type="button" class="btn btn-primary" id="liveToastBtn" onclick="Toasty()">Apply</button>
