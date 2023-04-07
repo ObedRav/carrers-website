@@ -40,3 +40,27 @@ def get_jobs() -> dict:
             list_results.append(dictionary)
 
         return(list_results)
+
+def load_job_from_db(id: int):
+    engine = connect()
+
+    with engine.connect() as conn:
+        result = conn.execute(text(f'SELECT * FROM jobs WHERE id={id};'))
+
+        rows = result.all()
+        if len(rows) == 0:
+            return None
+        else:
+            list_row = list(rows)
+            print(list_row)
+            dictionary = {
+                'id': list_row[0][0],
+                'title': list_row[0][1],
+                'location': list_row[0][2],
+                'salary': list_row[0][3],
+                'currency': list_row[0][4],
+                'responsibilities': list_row[0][5],
+                'requirements': list_row[0][6]
+            }
+
+    return dictionary
