@@ -10,7 +10,6 @@ colorama==0.4.6
 conda==4.3.16
 dbus-python==1.2.16
 dill==0.3.6
-distro-info===0.23ubuntu1
 Flask==2.2.3
 flatbuffers==23.1.21
 gast==0.4.0
