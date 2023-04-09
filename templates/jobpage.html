@@ -24,40 +24,41 @@
     <h4>Salary</h4>
     <p><STRONG>{{job.currency}}</STRONG> {{job.salary}}</p>
 
-    <h4>Application Form</h4>
-    <form action="/job/{{job['id']}}/apply" method="POST">
-      <div class="mb-3">
-        <label>Full Name</label><br>
-        <input type="text" required name="full_name" placeholder="Bruce Wayne">
-      </div>
+    <div class="mx-auto w-50 p-3">
+      <h3>Application Form</h3>
+      <form action="/job/{{job['id']}}/apply" method="POST">
+        <div class="form-outline mb-2">
+          <label class="form-label" for="form1Example1">Full Name</label>
+          <input type="text" id="form1Example1" class="form-control" name="full_name" />
+        </div>
 
-      <div class="mb-2">
-        <label>Email</label><br>
-        <input type="email" required name="email" placeholder="bruce@wayne.com">
-      </div>
+        <div class="mb-2">
+          <label class="form-label">Email</label><br>
+          <input class="form-control" type="email" name="email" required>
+        </div>
 
-      <div class="mb-2">
-        <label>LinkedIn URL</label><br>
-        <input type="url" name="linkedin_url" placeholder="https://linked.com/in/brucewayne">
-      </div>
+        <div class="mb-2">
+          <label class="form-label">LinkedIn URL</label><br>
+          <input class="form-control" type="url" name="linkedin_url" placeholder="https://linked.com/in/brucewayne">
+        </div>
 
-      <div class="mb-2">
-        <label>Education</label><br>
-        <textarea name="education" rows="3"></textarea>
-      </div>
+        <div class="mb-2">
+          <label class="form-label">Education</label><br>
+          <textarea class="form-control" name="education" rows="3"></textarea>
+        </div>
 
-      <div class="mb-2">
-        <label>Work Experience</label><br>
-        <textarea name="work_experience" rows="3"></textarea>
-      </div>
+        <div class="mb-2">
+          <label class="form-label">Work Experience</label><br>
+          <textarea class="form-control" name="work_experience" rows="3"></textarea>
+        </div>
 
-      <div class="mb-2">
-        <label>Resume URL</label><br>
-        <input type="url" name="resume_url">
-      </div>
+        <div class="mb-4">
+          <label class="form-label">Resume URL</label><br>
+          <input class="form-control" type="url" name="resume_url">
+        </div>
 
-      <input type="submit">
-    </form>
-
+        <input type="submit" class="btn btn-dark">
+      </form>
+    </div>
   </div>
 {% endblock %}
