@@ -15,8 +15,6 @@ flatbuffers==23.1.21
 gast==0.4.0
 google-auth==2.16.1
 google-auth-oauthlib==0.4.6
-google-pasta==0.2.0
-greenlet==2.0.2
 grpcio==1.51.3
 h5py==3.8.0
 idna==2.8

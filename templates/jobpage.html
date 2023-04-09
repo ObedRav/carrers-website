@@ -23,5 +23,41 @@
     </ol>
     <h4>Salary</h4>
     <p><STRONG>{{job.currency}}</STRONG> {{job.salary}}</p>
+
+    <h4>Application Form</h4>
+    <form action="/job/{{job['id']}}/apply" method="POST">
+      <div class="mb-3">
+        <label>Full Name</label><br>
+        <input type="text" required name="full_name" placeholder="Bruce Wayne">
+      </div>
+
+      <div class="mb-2">
+        <label>Email</label><br>
+        <input type="email" required name="email" placeholder="bruce@wayne.com">
+      </div>
+
+      <div class="mb-2">
+        <label>LinkedIn URL</label><br>
+        <input type="url" name="linkedin_url" placeholder="https://linked.com/in/brucewayne">
+      </div>
+
+      <div class="mb-2">
+        <label>Education</label><br>
+        <textarea name="education" rows="3"></textarea>
+      </div>
+
+      <div class="mb-2">
+        <label>Work Experience</label><br>
+        <textarea name="work_experience" rows="3"></textarea>
+      </div>
+
+      <div class="mb-2">
+        <label>Resume URL</label><br>
+        <input type="url" name="resume_url">
+      </div>
+
+      <input type="submit">
+    </form>
+
   </div>
 {% endblock %}
